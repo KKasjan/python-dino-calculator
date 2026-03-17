@@ -29,7 +29,7 @@ The target for a full totem is 63 units.
 **Clone the repository:**
 
 ```Bash
-git clone https://github.com/YOUR_USERNAME/dino-park-calculator.git
+git clone https://github.com/KKasjan/dino-park-calculator.git
 ```
 **Run the script:**
 
