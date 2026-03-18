@@ -4,7 +4,7 @@ park = [
          "type": "Herbivore",
          "golden_chest": True},
         {"name": "Velociraptor",
-         "type": "Carnovore",
+         "type": "Carnivore",
          "golden_chest": True},
         {"name": "Pterodactyl",
          "type": "Carnivore",
