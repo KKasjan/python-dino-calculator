@@ -2,28 +2,33 @@
 A lightweight Python tool designed to automate the calculation of resources needed to complete "Totems" in the Dino Park game. It helps players track their progress and identifies exactly how many level 1 units are missing for each dinosaur.
 
 ## 🚀 Features
-**Automated Calculations:** Converts various dinosaur levels (1-6) into base units (Level 1) using pre-defined balance rates.
-**Collection Filtering:** Skips dinosaurs that already have a "Golden Chest" (completed status).
-**Summary Report:** Generates a clean, readable list of all dinosaurs that still require attention.
-**Clean Code Architecture:** Built using a modular approach with a dedicated calculation engine and a main controller.
+- **Modular Architecture:** Clean separation between logic, data, and user interface.
+- **Automated Calculations:** Converts various dinosaur levels (1-6) into base units (Level 1) using pre-defined balance rates.
+- **Dynamic Configuration:** Automatic target calculation based on balance settings.
+- **Collection Filtering:** Skips dinosaurs that already have a "Golden Chest".
+  
+## 📂 Project Structure
+- `main.py` - The central orchestrator that manages the application flow.
+- `config.py` - Global settings and dynamic calculation constants.
+- `logic.py` - The calculation engine (pure mathematical functions).
+- `ui.py` - Handles all user interactions (input/output).
+- `data.py` - The database containing dinosaur attributes and statuses.
 
 ## 🛠️ Technical Stack
-**Language:** Python 3.x
-**Concepts used:** Functional programming (def main(), calculate_missing())
-- Data structures (Nested Lists & Dictionaries)
-- Logic flow control (Loops, Conditionals)
-- Clean Code principles (Snake_case, Type-hinting intent)
+- **Language:** Python 3.x
+- **Concepts used:** Modular Programming (File Separation), Data Isolation, Logic Decoupling.
+- **Architecture:** Separation of concerns (UI, Logic, Data, Config).
 
 ## 📋 How It Works
-The script iterates through a database of dinosaurs. For each dino without a golden chest, it prompts the user to input the current quantities of units at each level.
+The application follows a modular data processing pipeline:
+
+1. Data Extraction: The main controller fetches dinosaur records from data.py, filtering out those with a "Golden Chest".
+2. User Input: For active targets, ui.py prompts the user for the quantity of units at each level (6 to 1).
+3. Core Logic: The logic.py module calculates the total value in "Level 1" units using balances from config.py.
+4. Result Presentation: The final missing amount is calculated and displayed back to the user via the UI module.
 
 **Conversion Logic:**
-- Level 6 = 32 units
-- Level 5 = 16 units
-- Level 4 = 8 units
-- ...and so on.
-
-The target for a full totem is 63 units.
+- The system uses a base-2 exponential scaling (where Level 6 = 32 units). The TARGET is dynamically set to a full totem value (Level 7 equivalent minus 1).
 
 ## 💻 Installation & Usage
 **Clone the repository:**
